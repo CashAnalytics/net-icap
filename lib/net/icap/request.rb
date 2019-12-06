@@ -14,7 +14,6 @@ class Net::ICAPRequest
       @uri = URI(uri)
     end
     host = @uri.hostname
-    host += ":#{@uri.port}" if @uri.port != @uri.class::DEFAULT_PORT
 
     initialize_http_header initheader
     self['Host'] ||= host
