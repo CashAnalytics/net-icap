@@ -1,5 +1,3 @@
-require 'byebug'
-
 module Net
   RSpec.describe ICAPRequest do
     let(:uri) { URI('icap://localhost/echo') }
