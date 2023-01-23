@@ -55,6 +55,10 @@ module URI
     alias_method :hostname, :host unless self.instance_methods.include?(:hostname)
   end
 
-  @@schemes['ICAP'] = ICAP
+  if respond_to?(:register_scheme)
+    register_scheme('ICAP', ICAP)
+  else
+    @@schemes['ICAP'] = ICAP
+  end
 end
 
